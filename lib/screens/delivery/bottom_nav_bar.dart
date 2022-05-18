@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:quick_serve_rider/config/constants.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/account.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/favorites.dart';
+import 'package:quick_serve_rider/screens/delivery/screens/driver_schedule.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/home.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/order_history.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/search.dart';
@@ -22,7 +22,7 @@ class _BottomNavBarDeliveryState extends State<BottomNavBarDelivery> {
   // Pages if you click bottom navigation
   final List<Widget> _contentPages = <Widget>[
     const HomePageRider(),
-    const FavoritesPageDelivery(),
+    const DriverSchedulePage(),
     const SearchPageDelivery(),
     const OrderHistoryDelivery(),
     const AccountPageDelivery()
