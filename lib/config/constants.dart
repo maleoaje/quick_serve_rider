@@ -5,4 +5,4 @@ const primaryDark = Color(0xff24211c);
 const black = Colors.black;
 const white = Colors.white;
 Color grey = primaryDark.withOpacity(0.3);
-const liteGreen = Color(0xff82FFFF);
+const liteGreen = Color.fromARGB(255, 225, 240, 240);

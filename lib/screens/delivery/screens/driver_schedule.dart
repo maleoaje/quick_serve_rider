@@ -42,12 +42,12 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Row(
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
@@ -136,14 +136,14 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.7,
-                  child: buildTab(context)),
-            ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.7,
+                child: buildTab(context)),
+          ),
+        ],
       ),
     );
   }
@@ -155,26 +155,34 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
         child: Scaffold(
           body: Column(
             children: [
-              SizedBox(
-                height: 50,
-                child: AppBar(
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  bottom: TabBar(
-                    indicator: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(30)),
-                    labelColor: white,
-                    unselectedLabelColor: primaryColor,
-                    indicatorColor: primaryColor,
-                    tabs: const <Widget>[
-                      Tab(
-                        text: 'Avaliable',
-                      ),
-                      Tab(text: "Scheduled"),
-                    ],
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 7),
+                child: SizedBox(
+                  height: 50,
+                  child: AppBar(
+                    elevation: 0,
+                    backgroundColor: Colors.transparent,
+                    bottom: TabBar(
+                      indicator: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(30)),
+                      labelColor: white,
+                      unselectedLabelColor: primaryColor,
+                      indicatorColor: primaryColor,
+                      tabs: const <Widget>[
+                        Tab(
+                          text: 'Avaliable',
+                        ),
+                        Tab(text: "Scheduled"),
+                      ],
+                    ),
                   ),
                 ),
+              ),
+              const Divider(
+                height: 10,
+                thickness: 8,
+                color: liteGreen,
               ),
               Expanded(
                 child: TabBarView(
@@ -187,7 +195,78 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
                           height: MediaQuery.of(context).size.height * 0.52,
                           child: ListView(
                             physics: const AlwaysScrollableScrollPhysics(),
-                            children: const [Text('available')],
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              const Divider(
+                                height: 10,
+                                thickness: 8,
+                                color: liteGreen,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 6),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              const Divider(
+                                height: 10,
+                                thickness: 8,
+                                color: liteGreen,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                            ],
                           ),
                         ),
                       ],
@@ -195,14 +274,84 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
 
                     // second tab bar viiew widget
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         const SizedBox(height: 10),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.51,
+                          height: MediaQuery.of(context).size.height * 0.52,
                           child: ListView(
                             physics: const AlwaysScrollableScrollPhysics(),
-                            children: const [Text('scheduled')],
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              const Divider(
+                                height: 10,
+                                thickness: 8,
+                                color: liteGreen,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 6),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Divider(
+                                  height: 7,
+                                  thickness: 0.2,
+                                  color: grey,
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                              const Divider(
+                                height: 10,
+                                thickness: 8,
+                                color: liteGreen,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                child: Text(
+                                  'Location',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
+                              ),
+                              scheduleCard('XX-XX-XXXX, XX:XX'),
+                            ],
                           ),
                         ),
                       ],
@@ -213,6 +362,30 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
             ],
           ),
         ));
+  }
+
+  Widget scheduleCard(
+    String date,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              date,
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+            const Icon(
+              Icons.edit,
+              color: primaryColor,
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   Widget dateContainer(
