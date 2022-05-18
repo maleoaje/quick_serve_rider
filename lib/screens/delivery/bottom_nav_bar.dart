@@ -5,7 +5,7 @@ import 'package:quick_serve_rider/config/constants.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/account.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/driver_schedule.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/home.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/order_history.dart';
+import 'package:quick_serve_rider/screens/delivery/screens/ratings.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/earnings.dart';
 
 class BottomNavBarDelivery extends StatefulWidget {
@@ -24,7 +24,7 @@ class _BottomNavBarDeliveryState extends State<BottomNavBarDelivery> {
     const HomePageRider(),
     const DriverSchedulePage(),
     const EarnnigsPage(),
-    const OrderHistoryDelivery(),
+    const RatingsPage(),
     const AccountPageDelivery()
   ];
 

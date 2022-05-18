@@ -69,62 +69,65 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            '0m',
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              '0m',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          Text(
+                            'Active Time',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w300),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              '0m',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          Text(
+                            'Dash Time',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w300),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          Text(
+                            '₦0.00',
+                            textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w400),
                           ),
-                        ),
-                        Text(
-                          'Active Time',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            '0m',
+                          Text(
+                            'Balance',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
+                                fontSize: 14, fontWeight: FontWeight.w300),
                           ),
-                        ),
-                        Text(
-                          'Dash Time',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Text(
-                          '₦0.00',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w400),
-                        ),
-                        Text(
-                          'Balance',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

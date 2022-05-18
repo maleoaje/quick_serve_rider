@@ -102,6 +102,58 @@ class _EarningViewState extends State<EarningView> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(25, 20, 25, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'Activee Time',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      '0h 00m',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'Dash Time',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      '0h 00m',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'Deliveries Count',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      '0',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -120,23 +172,13 @@ class _EarningViewState extends State<EarningView> {
                 const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Past weeks',
+                    'Deliveries',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Month',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
                 buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
                 Divider(
                   height: 7,
@@ -163,58 +205,6 @@ class _EarningViewState extends State<EarningView> {
                 ),
                 const SizedBox(
                   height: 10,
-                ),
-                buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
-                Divider(
-                  height: 7,
-                  thickness: 0.2,
-                  color: grey,
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Month',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
-                Divider(
-                  height: 7,
-                  thickness: 0.2,
-                  color: grey,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
-                Divider(
-                  height: 7,
-                  thickness: 0.2,
-                  color: grey,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
-                Divider(
-                  height: 7,
-                  thickness: 0.2,
-                  color: grey,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                buildWeekCard('XXX 00 - XXX 00', "₦0.00"),
-                Divider(
-                  height: 7,
-                  thickness: 0.2,
-                  color: grey,
                 ),
               ],
             ),
