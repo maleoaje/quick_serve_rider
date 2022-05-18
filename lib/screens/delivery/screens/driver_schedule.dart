@@ -21,6 +21,7 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
           actions: const [
             Icon(
               Icons.settings,
+              color: primaryColor,
             ),
             SizedBox(
               width: 12,
@@ -28,17 +29,18 @@ class _DriverSchedulePageState extends State<DriverSchedulePage> {
             Icon(
               LineIcons.questionCircle,
               size: 28,
+              color: primaryColor,
             ),
             SizedBox(
               width: 18,
             ),
           ],
-          backgroundColor: primaryColor,
+          backgroundColor: white,
           elevation: 0,
           centerTitle: true,
           title: const Text(
             'Schedule',
-            style: TextStyle(fontWeight: FontWeight.w400),
+            style: TextStyle(fontWeight: FontWeight.w400, color: primaryColor),
           ),
         ),
       ),

@@ -6,7 +6,7 @@ import 'package:quick_serve_rider/screens/delivery/screens/account.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/driver_schedule.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/home.dart';
 import 'package:quick_serve_rider/screens/delivery/screens/order_history.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/search.dart';
+import 'package:quick_serve_rider/screens/delivery/screens/earnings.dart';
 
 class BottomNavBarDelivery extends StatefulWidget {
   const BottomNavBarDelivery({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _BottomNavBarDeliveryState extends State<BottomNavBarDelivery> {
   final List<Widget> _contentPages = <Widget>[
     const HomePageRider(),
     const DriverSchedulePage(),
-    const SearchPageDelivery(),
+    const EarnnigsPage(),
     const OrderHistoryDelivery(),
     const AccountPageDelivery()
   ];
