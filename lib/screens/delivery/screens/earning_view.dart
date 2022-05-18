@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:quick_serve_rider/config/constants.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/earning_view.dart';
 
-class EarnnigsPage extends StatefulWidget {
-  const EarnnigsPage({Key? key}) : super(key: key);
+class EarningView extends StatefulWidget {
+  const EarningView({Key? key}) : super(key: key);
 
   @override
-  _EarnnigsPageState createState() => _EarnnigsPageState();
+  _EarningViewState createState() => _EarningViewState();
 }
 
-class _EarnnigsPageState extends State<EarnnigsPage> {
+class _EarningViewState extends State<EarningView> {
   final TextEditingController _etSearch = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -39,8 +38,13 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
           backgroundColor: white,
           elevation: 0,
           centerTitle: true,
+          leading: const Icon(
+            Icons.keyboard_arrow_left,
+            size: 30,
+            color: primaryColor,
+          ),
           title: const Text(
-            'Earnings',
+            'Date',
             style: TextStyle(fontWeight: FontWeight.w400, color: primaryColor),
           ),
         ),
@@ -55,13 +59,6 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                 const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'This week',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                  ),
-                ),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
                     '₦0.00',
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.w300),
                   ),
@@ -71,59 +68,35 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            '0m',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                        Text(
-                          'Active Time',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
+                  children: const [
+                    Text(
+                      'DoorDash Pay',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            '0m',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                        Text(
-                          'Dash Time',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
+                    Text(
+                      '₦00.00',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'DoorDash Pay',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Text(
-                          '₦0.00',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w400),
-                        ),
-                        Text(
-                          'Balance',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        ),
-                      ],
-                    ),
+                    Text(
+                      '₦00.00',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
                   ],
                 ),
               ],
@@ -253,10 +226,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
 
   Widget buildWeekCard(String date, String price) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const EarningView()));
-      },
+      onTap: () {},
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -86,7 +86,7 @@ class _SignInPageState extends State<SignInPage> {
                       style: TextStyle(
                           color: primaryDark,
                           fontSize: 26,
-                          fontWeight: FontWeight.w400),
+                          fontWeight: FontWeight.w300),
                     ),
                   ),
                   const SizedBox(
@@ -215,14 +215,14 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   TextButton(
                     style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(3),
+                      elevation: MaterialStateProperty.all(0),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) => primaryColor,
                       ),
                       overlayColor:
                           MaterialStateProperty.all(Colors.transparent),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(10),
                       )),
                     ),
                     onPressed: () {
@@ -233,7 +233,7 @@ class _SignInPageState extends State<SignInPage> {
                           (Route<dynamic> route) => false);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
+                      padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
