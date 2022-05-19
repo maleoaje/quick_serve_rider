@@ -88,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: TextStyle(
                           color: primaryDark,
                           fontSize: 26,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w300),
                     ),
                   ),
                   const Align(
@@ -98,7 +98,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: TextStyle(
                           color: primaryDark,
                           fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w300),
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -302,7 +302,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       overlayColor:
                           MaterialStateProperty.all(Colors.transparent),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(8),
                       )),
                     ),
                     onPressed: () {
@@ -312,7 +312,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       );
                     },
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
+                      padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -353,7 +353,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           style: TextStyle(
                               color: primaryColor,
                               fontSize: 20,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w400),
                         ),
                       )
                     ],

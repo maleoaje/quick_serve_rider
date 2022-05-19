@@ -75,6 +75,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Align(
@@ -93,6 +94,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                         ],
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Align(
@@ -111,6 +113,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                         ],
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Text(
