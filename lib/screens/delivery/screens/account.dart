@@ -41,7 +41,7 @@ class _DriverAccountPageState extends State<DriverAccountPage> {
         physics: const BouncingScrollPhysics(),
         children: [
           SizedBox(
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height,
               child: buildTab(context)),
         ],
       ),
@@ -106,7 +106,7 @@ class _DriverAccountPageState extends State<DriverAccountPage> {
                       children: [
                         const SizedBox(height: 10),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.52,
+                          height: MediaQuery.of(context).size.height * 0.9,
                           child: ListView(
                             physics: const AlwaysScrollableScrollPhysics(),
                             children: const [],
@@ -120,7 +120,7 @@ class _DriverAccountPageState extends State<DriverAccountPage> {
                       children: [
                         const SizedBox(height: 10),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.52,
+                          height: MediaQuery.of(context).size.height * 0.9,
                           child: ListView(
                             physics: const AlwaysScrollableScrollPhysics(),
                             children: [
@@ -300,7 +300,7 @@ class _DriverAccountPageState extends State<DriverAccountPage> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                    const EdgeInsets.fromLTRB(20, 10, 20, 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -348,6 +348,51 @@ class _DriverAccountPageState extends State<DriverAccountPage> {
                                           },
                                           activeTrackColor: Colors.green,
                                           activeColor: white,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const Divider(
+                                height: 10,
+                                thickness: 16,
+                                color: liteGreen,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 20, 20, 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: 30,
+                                              width: 30,
+                                              decoration: BoxDecoration(
+                                                  color: primaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              child: const Icon(
+                                                LineIcons.alternateSignOut,
+                                                color: white,
+                                                size: 20,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 12),
+                                            const Text(
+                                              'Log Out',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 16),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
