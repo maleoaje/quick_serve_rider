@@ -1,400 +1,369 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:quick_serve_rider/auth/choose_sign.dart';
 import 'package:quick_serve_rider/config/constants.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/address.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/become_a_Partner_restaurant.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/become_a_qserver.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/get_help.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/notifications.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/payment.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/personal_information.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/quick_points.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/redeem_promo_code.dart';
-import 'package:quick_serve_rider/screens/delivery/screens/account_screens/refer_a_friend.dart';
 
-class AccountPageDelivery extends StatefulWidget {
-  const AccountPageDelivery({Key? key}) : super(key: key);
+class DriverAccountPage extends StatefulWidget {
+  const DriverAccountPage({Key? key}) : super(key: key);
 
   @override
-  _AccountPageDeliveryState createState() => _AccountPageDeliveryState();
+  _DriverAccountPageState createState() => _DriverAccountPageState();
 }
 
-class _AccountPageDeliveryState extends State<AccountPageDelivery> {
+class _DriverAccountPageState extends State<DriverAccountPage> {
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(40),
         child: AppBar(
-          backgroundColor: primaryColor,
+          actions: const [
+            Icon(
+              LineIcons.questionCircle,
+              size: 28,
+              color: primaryColor,
+            ),
+            SizedBox(
+              width: 18,
+            ),
+          ],
+          backgroundColor: white,
           elevation: 0,
+          centerTitle: true,
+          title: const Text(
+            'Accout',
+            style: TextStyle(fontWeight: FontWeight.w400, color: primaryColor),
+          ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Account',
-                style: TextStyle(
-                    color: primaryDark,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const GetHelp()));
-              },
-              child: _buildSettingsCard(
-                'Get Help',
-                LineIcons.questionCircle,
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ReferAFriend()));
-              },
-              child: _buildSettingsCard(
-                'Refer A Friend',
-                LineIcons.userFriends,
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const RedeemPromoCode()));
-              },
-              child: _buildSettingsCard(
-                'Redeem Promo Code',
-                LineIcons.gift,
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const QuickPoints()));
-              },
-              child: _buildSettingsCard(
-                'Quick Points',
-                LineIcons.dollarSign,
-              ),
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Account Settings',
-                style: TextStyle(
-                    color: primaryDark,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PersonalInformaton()));
-              },
-              child: _buildAccountSettingsCard('Personal Information',
-                  LineIcons.userEdit, 'Edit your Personal information'),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Payment()));
-              },
-              child: _buildAccountSettingsCard('Payment', LineIcons.creditCard,
-                  'Select new payment method or add new payment method'),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const AddressPage()));
-              },
-              child: _buildAccountSettingsCard(
-                  'Address', LineIcons.addressCard, 'Add or change an address'),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const NotificationsPage()));
-              },
-              child: _buildAccountSettingsCard(
-                  'Notification', LineIcons.bellAlt, 'Manage notifications'),
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'More',
-                style: TextStyle(
-                    color: primaryDark,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const BecomeAQServer()));
-              },
-              child: _buildMoreSettingsCard(
-                'Become a Q-Server',
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const BecomeAQRestaurant()));
-              },
-              child: _buildMoreSettingsCard(
-                'Become a Partner Restaurant',
-              ),
-            ),
-            const SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(60, 0, 60, 10),
-              child: OutlinedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) => primaryColor,
-                  ),
-                  overlayColor: MaterialStateProperty.all(Colors.transparent),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(
-                          builder: (context) => const ChooseSign()),
-                      (Route<dynamic> route) => false);
-                  FocusScope.of(context).unfocus();
-                },
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'Logout',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: primaryDark),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: [
+          SizedBox(
+              height: MediaQuery.of(context).size.height * 0.7,
+              child: buildTab(context)),
+        ],
       ),
     );
   }
 
-  Widget _buildSettingsCard(
-    String name,
-    IconData icon,
-  ) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-        height: 65,
-        width: double.maxFinite,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Icon(
-                        icon,
-                        size: 25,
+  Widget buildTab(BuildContext context) {
+    return DefaultTabController(
+        initialIndex: 0,
+        length: 3,
+        child: Scaffold(
+          body: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(70, 0, 70, 7),
+                child: SizedBox(
+                  height: 50,
+                  child: AppBar(
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    backgroundColor: primaryColor.withOpacity(0.1),
+                    bottom: TabBar(
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      const SizedBox(width: 5),
-                      Center(
-                        child: Text(
-                          name,
-                          textAlign: TextAlign.end,
-                          style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
+                      labelColor: white,
+                      unselectedLabelColor: primaryColor,
+                      indicatorColor: primaryColor,
+                      tabs: const <Widget>[
+                        Tab(
+                          text: 'Profile',
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const Expanded(
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                    padding: EdgeInsets.fromLTRB(0, 16, 10, 0),
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      size: 30,
-                    )),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildAccountSettingsCard(
-      String name, IconData icon, String description) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-        height: 78,
-        width: double.maxFinite,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Icon(
-                            icon,
-                            size: 25,
-                          ),
-                          const SizedBox(width: 5),
-                          Center(
-                            child: Text(
-                              name,
-                              textAlign: TextAlign.end,
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                        ],
-                      ),
+                        Tab(text: "Vehicles"),
+                        Tab(text: "Settings"),
+                      ],
                     ),
                   ),
                 ),
-                const Expanded(
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 16, 10, 0),
-                        child: Icon(
-                          Icons.keyboard_arrow_right,
-                          size: 30,
-                        )),
-                  ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(28, 0, 0, 0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  description,
-                  textAlign: TextAlign.start,
-                  style: const TextStyle(
-                      fontSize: 13,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w300),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    // first tab bar view widget
+                    Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.52,
+                          child: ListView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            children: const [],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // second tab bar viiew widget
+                    Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.52,
+                          child: ListView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            children: const [],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // third tab bar view widget
+                    Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.52,
+                          child: ListView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 5, 0, 10),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: const [
+                                              Icon(LineIcons.userCircleAlt),
+                                              SizedBox(
+                                                width: 16,
+                                              ),
+                                              Text(
+                                                'Manage Acoount',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16),
+                                              )
+                                            ],
+                                          ),
+                                          const Icon(
+                                            Icons.keyboard_arrow_right_rounded,
+                                            size: 30,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      height: 7,
+                                      thickness: 0.2,
+                                      color: grey,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 15, 0, 10),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: const [
+                                              Icon(LineIcons.mapAlt),
+                                              SizedBox(
+                                                width: 16,
+                                              ),
+                                              Text(
+                                                'In App Navigaion with Google Maps',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16),
+                                              )
+                                            ],
+                                          ),
+                                          const Icon(
+                                            Icons.check,
+                                            size: 25,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      height: 7,
+                                      thickness: 0.2,
+                                      color: grey,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 15, 0, 10),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: const [
+                                              Icon(LineIcons.mapSigns),
+                                              SizedBox(
+                                                width: 16,
+                                              ),
+                                              Text(
+                                                'Apple Maps',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      height: 7,
+                                      thickness: 0.2,
+                                      color: grey,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 15, 0, 20),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: const [
+                                              Icon(LineIcons.mapPin),
+                                              SizedBox(
+                                                width: 16,
+                                              ),
+                                              Text(
+                                                'Google Maps',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const Divider(
+                                height: 10,
+                                thickness: 16,
+                                color: liteGreen,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Notifications',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          'Promotional Push Notifications',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 16),
+                                        ),
+                                        Switch(
+                                          value: isSwitched,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              isSwitched = value;
+                                            });
+                                          },
+                                          activeTrackColor: Colors.green,
+                                          activeColor: white,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const Divider(
+                                height: 10,
+                                thickness: 16,
+                                color: liteGreen,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Delivery Preferences',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: 30,
+                                              width: 30,
+                                              decoration: BoxDecoration(
+                                                  color: primaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              child: const Icon(
+                                                LineIcons.dollarSign,
+                                                color: white,
+                                                size: 20,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 12),
+                                            const Text(
+                                              'Cash on delivery',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 16),
+                                            ),
+                                          ],
+                                        ),
+                                        Switch(
+                                          value: isSwitched,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              isSwitched = value;
+                                            });
+                                          },
+                                          activeTrackColor: Colors.green,
+                                          activeColor: white,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildMoreSettingsCard(
-    String name,
-  ) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-        height: 75,
-        width: double.maxFinite,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(width: 5),
-                  Center(
-                    child: Text(
-                      name,
-                      textAlign: TextAlign.end,
-                      style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(0, 16, 10, 0),
-              child: Icon(
-                Icons.keyboard_arrow_right,
-                size: 30,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+            ],
+          ),
+        ));
   }
 }

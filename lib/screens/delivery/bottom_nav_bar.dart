@@ -25,7 +25,7 @@ class _BottomNavBarDeliveryState extends State<BottomNavBarDelivery> {
     const DriverSchedulePage(),
     const EarnnigsPage(),
     const RatingsPage(),
-    const AccountPageDelivery()
+    const DriverAccountPage()
   ];
 
   @override
