@@ -10,7 +10,6 @@ class HomePageRider extends StatefulWidget {
 }
 
 class _HomePageRiderState extends State<HomePageRider> {
-  final TextEditingController _etAddress = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

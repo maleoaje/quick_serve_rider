@@ -11,7 +11,6 @@ class EarnnigsPage extends StatefulWidget {
 }
 
 class _EarnnigsPageState extends State<EarnnigsPage> {
-  final TextEditingController _etSearch = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

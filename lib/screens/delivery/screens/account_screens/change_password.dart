@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:quick_serve_rider/auth/sign_up.dart';
 import 'package:quick_serve_rider/config/constants.dart';
 
 class ChangePasswordPage extends StatefulWidget {

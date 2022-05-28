@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:quick_serve_rider/auth/sign_in.dart';
 import 'package:quick_serve_rider/auth/verify_account.dart';
@@ -31,21 +30,6 @@ class _SignUpPageState extends State<SignUpPage> {
         _iconVisible = Icons.visibility;
       }
     });
-  }
-
-  DateTime? _currentBackPressTime;
-  Future<bool> _onWillPop() {
-    DateTime now = DateTime.now();
-    if (_currentBackPressTime == null ||
-        now.difference(_currentBackPressTime!) > const Duration(seconds: 2)) {
-      _currentBackPressTime = now;
-      Fluttertoast.showToast(
-          backgroundColor: primaryDark,
-          msg: 'Press back again to exit',
-          toastLength: Toast.LENGTH_LONG);
-      return Future.value(false);
-    }
-    return Future.value(true);
   }
 
   @override

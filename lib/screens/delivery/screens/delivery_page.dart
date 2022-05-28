@@ -676,22 +676,22 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
           keyboardType: TextInputType.number,
           controller: _etOtherAmount,
           style: const TextStyle(color: primaryDark, fontSize: 14),
-          decoration: InputDecoration(
-            prefixIcon: const Icon(
+          decoration: const InputDecoration(
+            prefixIcon: Icon(
               LineIcons.moneyBill,
               color: primaryDark,
             ),
-            fillColor: const Color(0xffe0e0e0),
-            focusedBorder: const UnderlineInputBorder(
+            fillColor: Color(0xffe0e0e0),
+            focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: primaryDark, width: 0)),
-            enabledBorder: const UnderlineInputBorder(
+            enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 width: 2,
                 color: Color(0xFFCCCCCC),
               ),
             ),
             labelText: '',
-            labelStyle: const TextStyle(
+            labelStyle: TextStyle(
               color: primaryDark,
             ),
           ),

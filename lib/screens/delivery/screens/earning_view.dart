@@ -10,7 +10,6 @@ class EarningView extends StatefulWidget {
 }
 
 class _EarningViewState extends State<EarningView> {
-  final TextEditingController _etSearch = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:quick_serve_rider/auth/choose_sign.dart';
@@ -328,24 +330,6 @@ class _OverBoardState extends State<OverBoard> with TickerProviderStateMixin {
               ),
             ),
     );
-  }
-
-  _next() {
-    setState(() {
-      _swipeDirection = SwipeDirection.rightToLeft;
-      _last = _counter;
-      _counter++;
-    });
-    _animate();
-  }
-
-  _skip() {
-    setState(() {
-      _swipeDirection = SwipeDirection.skipToLast;
-      _last = _counter;
-      _counter = _total - 1;
-    });
-    _animate();
   }
 
   _animate() {

@@ -1,9 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:quick_serve_rider/config/constants.dart';
 import 'package:quick_serve_rider/config/global_style.dart';
 import 'package:quick_serve_rider/library/smooth_star_rating/smooth_star_rating.dart';
-import 'package:quick_serve_rider/reusables/global_function.dart';
-import 'package:quick_serve_rider/reusables/global_widget.dart';
 
 class AddAReviewPage extends StatefulWidget {
   const AddAReviewPage({Key? key}) : super(key: key);
@@ -14,8 +14,6 @@ class AddAReviewPage extends StatefulWidget {
 
 class _AddAReviewPageState extends State<AddAReviewPage> {
   // initialize global function and global widget
-  final _globalFunction = GlobalFunction();
-  final _globalWidget = GlobalWidget();
 
   double _rating = 0;
   @override
@@ -90,7 +88,7 @@ class _AddAReviewPageState extends State<AddAReviewPage> {
                   spacing: 1,
                   onRated: (value) {
                     _rating = value;
-                    print("rating value -> $_rating");
+                    log("rating value -> $_rating");
                     // print("rating value dd -> ${value.truncate()}");
                   },
                 )),
