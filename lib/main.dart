@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QuickServe-Rider',
+      title: 'QuickServe Rider',
       theme: ThemeData(
         backgroundColor: Colors.white,
         fontFamily: 'Roboto',

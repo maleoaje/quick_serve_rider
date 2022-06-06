@@ -78,7 +78,7 @@ class _AddAReviewPageState extends State<AddAReviewPage> {
                 child: SmoothStarRating(
                   rating: 5,
                   isReadOnly: false,
-                  size: 40,
+                  size: 42,
                   filledIconData: Icons.star,
                   defaultIconData: Icons.star_border,
                   color: Colors.yellow[700],
@@ -97,7 +97,7 @@ class _AddAReviewPageState extends State<AddAReviewPage> {
                 margin: const EdgeInsets.only(top: 32, left: 24, right: 24),
                 child: const Text('Review Message')),
             Container(
-              margin: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+              margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
               child: TextField(
                 maxLines: null,
                 decoration: InputDecoration(

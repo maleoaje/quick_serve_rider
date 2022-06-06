@@ -80,7 +80,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              '0m',
+                              '0mins',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w400),
                             ),
@@ -99,7 +99,7 @@ class _EarnnigsPageState extends State<EarnnigsPage> {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              '0m',
+                              '0mins',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w400),
                             ),

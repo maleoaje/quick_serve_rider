@@ -54,7 +54,7 @@ class _BottomNavBarDeliveryState extends State<BottomNavBarDelivery> {
         now.difference(_currentBackPressTime!) > const Duration(seconds: 2)) {
       _currentBackPressTime = now;
       Fluttertoast.showToast(
-          msg: 'Press back again to select service',
+          msg: 'Press back again to exit',
           backgroundColor: primaryColor,
           toastLength: Toast.LENGTH_LONG);
       return Future.value(false);
